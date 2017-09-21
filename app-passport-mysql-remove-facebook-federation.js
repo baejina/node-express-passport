@@ -1,6 +1,5 @@
 // mysql 설치
 //
-
 // CREATE TABLE users (
 //     id INT NOT NULL AUTO_INCREMENT ,
 //     authId VARCHAR(50) NOT NULL ,
@@ -167,9 +166,8 @@ passport.use(new LocalStrategy(
                         console.log(222);
                         done(null, false);
                     }
-                }) // hasher
+                }); // hasher
         })
-
     }
 ));
 

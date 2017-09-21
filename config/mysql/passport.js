@@ -48,13 +48,10 @@ module.exports = function(app) {
                                 done(null, false);
 
                             }
-                        })
+                        });
                     // hasher
                 }
-
-
             })
-
         }
     ));
 
@@ -66,13 +63,11 @@ module.exports = function(app) {
       },
 
       function(accessToken, refreshToken, profile, done) {
-          console.log(profile);
 
           var authId = 'facebook:' + profile.id;
           var sql = 'select * from users where authId=?';
 
           conn.query(sql, [authId], function(err, results) {
-            console.log(err, results);
 
             if(results.length > 0) {
                 done(null, results[0]);
@@ -81,7 +76,7 @@ module.exports = function(app) {
                 var newUser = {
                     'authId': authId,
                     'displayName': profile.displayName,
-                }
+                };
                 conn.query(sql, newUser, function(err, results) {
                     if(err) {
                         console.log(err);
@@ -94,7 +89,5 @@ module.exports = function(app) {
           });
       }
     ));
-
     return passport;
-
-}
+};

@@ -25,14 +25,14 @@
 
 #create table
 =================
-CREATE TABLE users (
-    id INT NOT NULL AUTO_INCREMENT ,
-    authId VARCHAR(50) NOT NULL ,
-    username VARCHAR(30),
-    password VARCHAR(255),
-    salt VARCHAR(255),
-    displayName VARCHAR(50),
-    PRIMARY KEY (id),
-    UNIQUE (authId)
-) ENGINE = InnoDB;
-
+    CREATE TABLE users (
+        id INT NOT NULL AUTO_INCREMENT ,
+        authId VARCHAR(50) NOT NULL ,
+        username VARCHAR(30),
+        password VARCHAR(255),
+        salt VARCHAR(255),
+        displayName VARCHAR(50),
+        PRIMARY KEY (id),
+        UNIQUE (authId)
+    ) ENGINE = InnoDB;
+    

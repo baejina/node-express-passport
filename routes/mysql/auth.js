@@ -39,8 +39,6 @@ module.exports = function(passport) {
         console.log("Register");
     });
 
-
-
     route.post(
         '/login',
         passport.authenticate(
