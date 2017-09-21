@@ -42,6 +42,6 @@ app.get('/welcome', function(req, res){
 var auth = require('./routes/mysql/auth')(passport);
 app.use('/auth/', auth);
 
-app.listen(4000, function(){
-    console.log('Connected 4000 port!!!');
+app.listen(3005, function(){
+    console.log('Connected 3005 port!!!');
 });
