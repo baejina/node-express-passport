@@ -160,13 +160,11 @@ passport.use(new LocalStrategy(
             var user = results[0];
             return hasher({password: pwd, salt: user.salt}, function(err, pass, salt, hash) {
                     if( hash === user.password) {
-                        console.log(111);
                         done(null, user);
                     } else {
-                        console.log(222);
                         done(null, false);
                     }
-                }); // hasher
+            }); // hasher
         })
     }
 ));
@@ -208,6 +206,6 @@ app.get('/auth/logout', function(req, res) {
     res.redirect('/welcome');
 });
 
-app.listen(4000, function(){
+app.listen(3006, function(){
     console.log('Connected 3006 port!!!');
 });
