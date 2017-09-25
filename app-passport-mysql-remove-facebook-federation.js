@@ -1,5 +1,9 @@
-// mysql 설치
-//
+// 1. mysql 설치,
+// 1-1 o2 database 설치,
+// 1-2 mysql 권한 설정
+//      GRANT ALL PRIVILEGES ON *.* TO root@'127.0.0.1' IDENTIFIED BY '111111' WITH GRANT OPTION;
+//      GRANT ALL PRIVILEGES ON *.* TO root@'localhost' IDENTIFIED BY '111111' WITH GRANT OPTION;
+
 // CREATE TABLE users (
 //     id INT NOT NULL AUTO_INCREMENT ,
 //     authId VARCHAR(50) NOT NULL ,
@@ -14,6 +18,7 @@
 // facebook federation profile 사용하려고 email 컬럼 추가
 // 쿼리추가
 // alter table users add email varchar(50);
+
 
 var express = require('express');
 var session = require('express-session');
@@ -38,7 +43,7 @@ var options = {
     user: 'root',
     password: '111111',
     database: 'o2'
-}
+};
 var mysql = require('mysql');
 var conn = mysql.createConnection( options );
 conn.connect();
